@@ -16,7 +16,7 @@ public class Server {
         ByteBuffer buffer = ByteBuffer.allocate(32);
         // 绑定监听端口
         open.bind(new InetSocketAddress(8080));
-
+        open.configureBlocking(false);
         List<SocketChannel> socketChannelList = new ArrayList<>();
         while (true){
             // SocketChannel 与客户端进行通信
